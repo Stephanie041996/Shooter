@@ -1,4 +1,4 @@
-import Player from './Player';
+import {Player, PlayerLaser} from './Player';
 import {ChaserShip, GunShip, CarrierShip, EnemyLaser } from './EnemyShips';
 
 import sprBg0 from './content/sprBg0.png';
@@ -128,6 +128,13 @@ if (this.keyA.isDown) {
 }
 else if (this.keyD.isDown) {
   this.player.moveRight();
+}
+if (this.keySpace.isDown) {
+  this.player.setData("isShooting", true);
+}
+else {
+  this.player.setData("timerShootTick", this.player.getData("timerShootDelay") - 1);
+  this.player.setData("isShooting", false);
 }
 }
 
