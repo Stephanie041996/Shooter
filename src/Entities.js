@@ -7,6 +7,8 @@ this.scene.physics.world.enableBody(this, 0);
 this.setData("type", type);
 this.setData("isDead", false);
     }
+
+    
   }
 
   

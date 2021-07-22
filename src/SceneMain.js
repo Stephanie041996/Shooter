@@ -1,4 +1,6 @@
 import Player from './Player';
+import {ChaserShip, GunShip, CarrierShip, EnemyLaser } from './EnemyShips';
+
 import sprBg0 from './content/sprBg0.png';
 import sprBg1 from './content/sprBg1.png';
 import sprExplosion from './content/sprExplosion.png';
@@ -91,7 +93,26 @@ this.load.audio("sndLaser", sndLaser);
     this.keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
     this.keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
     this.keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-    }
+    this.enemies = this.add.group();
+    this.enemyLasers = this.add.group();
+    this.playerLasers = this.add.group(); 
+  
+    this.time.addEvent({
+      delay: 1800,
+      callback: function() {
+        var enemy = new GunShip(
+          this,
+          Phaser.Math.Between(0, this.game.config.width),
+          0
+        );
+        this.enemies.add(enemy);
+      },
+      callbackScope: this,
+      loop: true
+    });
+  }
+
+
 update(){
     this.player.update();
 
