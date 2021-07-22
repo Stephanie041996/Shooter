@@ -1,7 +1,7 @@
 import SceneMain from './SceneMain';
 import SceneMainMenu from './SceneMainMenu';
 import SceneGameOver from './SceneGameOver';
-
+import './style.css';
 
 
 var config = {
