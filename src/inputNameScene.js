@@ -5,13 +5,13 @@ import {
 
 export default class InputNameScene extends Phaser.Scene {
   constructor() {
-    super('InputName');
+    super({key: "InputNameScene"});
   }
 
   create() {
-    this.add.image(400, 300, 'bg2').setDisplaySize(800, 600);
+    
     const score = window.localStorage.getItem('score');
-    const text = this.add.text(200, 10, 'arcade', 'Please enter your name', 18).setTint(0xFFFFFF);
+    this.text = this.add.text(10, 10,  'Please enter your name', 14).setTint(0xFFFFFF);
 
     const element = this.add.dom(350, 0).createFromCache('nameform');
 
@@ -23,7 +23,8 @@ export default class InputNameScene extends Phaser.Scene {
 
         if (inputText.value !== '') {
           setScore(inputText.value, score).then(() => {
-            element.scene.scene.start('GameOver');
+            // element.scene.scene.start('GameOver');
+            element.scene.scene.start("SceneGameOver");
           }).catch(() => {
 
           });

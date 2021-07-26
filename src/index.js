@@ -2,13 +2,16 @@ import 'phaser'
 import SceneMain from './SceneMain';
 import SceneMainMenu from './SceneMainMenu';
 import SceneGameOver from './SceneGameOver';
+import SceneLeaderBoard from './SceneLeaderBoard'
+import InputNameScene from './inputNameScene';
+
 import './style.css';
 
 
 var config = {
     type: Phaser.WEBGL,
-    width: 480,
-    height: 640,
+    width: 800,
+    height: 840,
     backgroundColor: "black",
     physics: {
       default: "arcade",
@@ -19,7 +22,9 @@ var config = {
     scene: [ 
         SceneMainMenu,
         SceneMain,
-        SceneGameOver
+        SceneGameOver,
+        SceneLeaderBoard,
+        InputNameScene
     ],
     pixelArt: true,
     roundPixels: true
