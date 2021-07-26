@@ -1,5 +1,3 @@
-
-
 const fetch = require('node-fetch');
 
 const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/FjlaeYi14T6wTlmel7ig/scores/';
@@ -36,7 +34,3 @@ export const getScore = async () => {
   } catch (e) {
   }
 };
-
-
-
-

@@ -1,4 +1,3 @@
-
 import Button from './Objects/Button';
 import {
   getScore,
@@ -6,45 +5,42 @@ import {
 
 export default class SceneLeaderBoard extends Phaser.Scene {
   constructor() {
-    super({key: "SceneLeaderBoard"});
+    super({ key: 'SceneLeaderBoard' });
   }
-
 
   create() {
     this.sfx = {
-      btnOver: this.sound.add("sndBtnOver"),
-      btnDown: this.sound.add("sndBtnDown")
+      btnOver: this.sound.add('sndBtnOver'),
+      btnDown: this.sound.add('sndBtnDown'),
     };
     this.btnRestart = this.add.sprite(
       this.game.config.width * 0.5,
       this.game.config.height * 0.5,
-      "sprBtnRestart"
+      'sprBtnRestart',
     );
 
     this.btnRestart.setInteractive();
 
-    this.btnRestart.on("pointerover", function() {
-      this.btnRestart.setTexture("sprBtnRestartHover"); // set the button texture to sprBtnPlayHover
+    this.btnRestart.on('pointerover', function () {
+      this.btnRestart.setTexture('sprBtnRestartHover'); // set the button texture to sprBtnPlayHover
       this.sfx.btnOver.play(); // play the button over sound
     }, this);
 
-    this.btnRestart.on("pointerout", function() {
-      this.setTexture("sprBtnRestart");
+    this.btnRestart.on('pointerout', function () {
+      this.setTexture('sprBtnRestart');
     });
 
-    this.btnRestart.on("pointerdown", function() {
-      this.btnRestart.setTexture("sprBtnRestartDown");
+    this.btnRestart.on('pointerdown', function () {
+      this.btnRestart.setTexture('sprBtnRestartDown');
       this.sfx.btnDown.play();
     }, this);
 
-    this.btnRestart.on("pointerup", function() {
-      this.btnRestart.setTexture("sprBtnRestart");
-      this.scene.start("SceneGameOver");
+    this.btnRestart.on('pointerup', function () {
+      this.btnRestart.setTexture('sprBtnRestart');
+      this.scene.start('SceneGameOver');
     }, this);
-  
-    
+
     getScore().then((scores) => {
-      
       scores.sort((a, b) => b.score - a.score);
       this.add.text(100, 20, 'shooter', 'RANK  SCORE   NAME').setTint(0x08B0F8);
       for (let i = 0; i < 5; i += 1) {
