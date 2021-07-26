@@ -1,6 +1,12 @@
 import {Player, PlayerLaser} from './Player';
+import SceneGameOver from './SceneGameOver';
 import {ChaserShip, GunShip, CarrierShip, EnemyLaser } from './EnemyShips';
-
+// import {
+//   renderScore,
+//   addPoints,
+//   renderPower,
+//   renderPoints,
+// } from './score';
 import sprBg0 from './content/sprBg0.png';
 import sprBg1 from './content/sprBg1.png';
 import sprExplosion from './content/sprExplosion.png';
@@ -13,9 +19,15 @@ import sprPlayer from './content/sprPlayer.png';
 import sndExplode0 from './content/sndExplode0.wav';
 import sndExplode1 from './content/sndExplode1.wav';
 import sndLaser from './content/sndLaser.wav';
+
+
+
+
+let score = 0;
 export default class SceneMain extends Phaser.Scene {
     constructor() {
       super({ key: "SceneMain" });
+   
     }
    preload(){
     this.load.image("sprBg0", sprBg0);
@@ -45,7 +57,8 @@ this.load.audio("sndExplode1", sndExplode1);
 this.load.audio("sndLaser", sndLaser);
    }
     create() {
-      
+   
+    
     this.anims.create({
       key: "sprEnemy0",
       frames: this.anims.generateFrameNumbers("sprEnemy0"),
@@ -96,9 +109,19 @@ this.load.audio("sndLaser", sndLaser);
     this.enemies = this.add.group();
     this.enemyLasers = this.add.group();
     this.playerLasers = this.add.group(); 
-  
+    
+    const scoreBoard = this.add.text(10, 10, 'Shooter', `Score: ${score}`, 14).setTint(0x08B0F8);
+
+    // this.scoreText = this.add.text(this.game.config.width * 0.5, 128, `score: ${score} `, {
+    //   fontFamily: 'monospace',
+    //   fontSize: 35,
+    //   fontStyle: 'bold',
+    //   color: '#ffffff',
+    //   align: 'center'
+    // });
+
     this.time.addEvent({
-      delay: 1800,
+       delay: 1800,
       callback: function() {
         var enemy = new GunShip(
           this,
@@ -110,14 +133,24 @@ this.load.audio("sndLaser", sndLaser);
       callbackScope: this,
       loop: true
     });
+
     this.physics.add.collider(this.playerLasers, this.enemies, function(playerLaser, enemy) {
       if (enemy) {
         if (enemy.onDestroy !== undefined) {
           enemy.onDestroy();
         }
+
+        
         enemy.explode(true);
         playerLaser.destroy();
+
+        score += 10;
+        // this.scoreText.setText(`Score: + ${score}`);
+        scoreBoard.text = `Score: ${score}`
       }
+
+
+  
     });
 
     this.physics.add.overlap(this.player, this.enemies, function(player, enemy) {
