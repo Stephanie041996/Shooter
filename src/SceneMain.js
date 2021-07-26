@@ -1,12 +1,7 @@
 import {Player, PlayerLaser} from './Player';
-import SceneGameOver from './SceneGameOver';
-import {ChaserShip, GunShip, CarrierShip, EnemyLaser } from './EnemyShips';
-// import {
-//   renderScore,
-//   addPoints,
-//   renderPower,
-//   renderPoints,
-// } from './score';
+
+import GunShip from './EnemyShips';
+
 import sprBg0 from './content/sprBg0.png';
 import sprBg1 from './content/sprBg1.png';
 import sprExplosion from './content/sprExplosion.png';
@@ -112,13 +107,6 @@ this.load.audio("sndLaser", sndLaser);
     
     const scoreBoard = this.add.text(10, 10, 'Shooter', `Score: ${score}`, 14).setTint(0x08B0F8);
 
-    // this.scoreText = this.add.text(this.game.config.width * 0.5, 128, `score: ${score} `, {
-    //   fontFamily: 'monospace',
-    //   fontSize: 35,
-    //   fontStyle: 'bold',
-    //   color: '#ffffff',
-    //   align: 'center'
-    // });
 
     this.time.addEvent({
        delay: 1800,
@@ -145,7 +133,7 @@ this.load.audio("sndLaser", sndLaser);
         playerLaser.destroy();
 
         score += 10;
-        // this.scoreText.setText(`Score: + ${score}`);
+       
         scoreBoard.text = `Score: ${score}`
       }
 

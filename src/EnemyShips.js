@@ -6,13 +6,7 @@ export class EnemyLaser extends Entity {
       this.body.velocity.y = 200;
     }
   }
-// export class ChaserShip extends Entity {
-//     constructor(scene, x, y) {
-//       super(scene, x, y, "sprEnemy1", "ChaserShip");
-//       this.body.velocity.y = Phaser.Math.Between(50, 100);
-//     }
-//   }
-  
+
 export class GunShip extends Entity {
     constructor(scene, x, y) {
       super(scene, x, y, "sprEnemy0", "GunShip");
@@ -44,12 +38,6 @@ export class GunShip extends Entity {
       }
     }
   }
-  export class CarrierShip extends Entity {
-    constructor(scene, x, y) {
-      super(scene, x, y, "sprEnemy2", "CarrierShip");
-      this.body.velocity.y = Phaser.Math.Between(50, 100);
-      this.play("sprEnemy2");
-    }
-  }
+  
 
   

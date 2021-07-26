@@ -23,7 +23,7 @@ export default class InputNameScene extends Phaser.Scene {
 
         if (inputText.value !== '') {
           setScore(inputText.value, score).then(() => {
-            // element.scene.scene.start('GameOver');
+            
             element.scene.scene.start("SceneGameOver");
           }).catch(() => {
 
