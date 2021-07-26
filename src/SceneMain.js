@@ -1,3 +1,10 @@
+/* eslint-disable no-redeclare */
+/* eslint-disable block-scoped-var */
+/* eslint-disable no-plusplus */
+/* eslint-disable no-var */
+/* eslint-disable vars-on-top */
+/* eslint-disable no-undef */
+/* eslint-disable import/extensions */
 import { Player, PlayerLaser } from './Player';
 
 import GunShip from './EnemyShips';

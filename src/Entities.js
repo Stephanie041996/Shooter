@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable max-len */
 export default class Entity extends Phaser.GameObjects.Sprite {
   constructor(scene, x, y, key, type) {
     super(scene, x, y, key);
@@ -24,6 +26,7 @@ export default class Entity extends Phaser.GameObjects.Sprite {
       this.setAngle(0);
       this.body.setVelocity(0, 0);
 
+      // eslint-disable-next-line func-names
       this.on('animationcomplete', function () {
         if (canDestroy) {
           this.destroy();

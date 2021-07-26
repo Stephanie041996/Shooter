@@ -1,3 +1,5 @@
+/* eslint-disable func-names */
+// eslint-disable-next-line no-undef
 export default class SceneGameOver extends Phaser.Scene {
   constructor() {
     super({ key: 'SceneGameOver' });

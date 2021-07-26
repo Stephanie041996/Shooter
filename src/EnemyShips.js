@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+/* eslint-disable import/extensions */
+/* eslint-disable max-classes-per-file */
 import Entity from './Entities';
 
 export class EnemyLaser extends Entity {

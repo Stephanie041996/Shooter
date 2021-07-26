@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable import/extensions */
 import 'phaser';
 import SceneMain from './SceneMain';
 import SceneMainMenu from './SceneMainMenu';

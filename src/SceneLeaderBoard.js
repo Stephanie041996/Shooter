@@ -1,3 +1,6 @@
+/* eslint-disable func-names */
+/* eslint-disable import/extensions */
+/* eslint-disable no-undef */
 import Button from './Objects/Button';
 import {
   getScore,

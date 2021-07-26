@@ -1,3 +1,7 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-use-before-define */
+/* eslint-disable import/extensions */
+/* eslint-disable max-classes-per-file */
 import Entity from './Entities';
 
 export class Player extends Entity {

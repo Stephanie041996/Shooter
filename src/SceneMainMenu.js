@@ -1,3 +1,5 @@
+/* eslint-disable func-names */
+/* eslint-disable no-undef */
 import sprBtnPlay from './content/sprBtnPlay.png';
 import sprBtnPlayHover from './content/sprBtnPlayHover.png';
 import sprBtnPlayDown from './content/sprBtnPlayDown.png';
@@ -35,6 +37,7 @@ export default class SceneMainMenu extends Phaser.Scene {
       'sprBtnPlay',
     );
     this.btnPlay.setInteractive();
+    // eslint-disable-next-line func-names
     this.btnPlay.on('pointerover', function () {
       this.btnPlay.setTexture('sprBtnPlayHover'); // set the button texture to sprBtnPlayHover
       this.sfx.btnOver.play(); // play the button over sound

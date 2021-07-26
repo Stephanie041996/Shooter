@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import Phaser from 'phaser';
 import {
   setScore,
@@ -28,6 +29,7 @@ export default class InputNameScene extends Phaser.Scene {
           });
         } else {
           this.scene.tweens.add({
+            // eslint-disable-next-line no-undef
             targets: text,
             alpha: 0.2,
             duration: 250,
