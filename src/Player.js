@@ -34,7 +34,7 @@ export class Player extends Entity {
     this.scene.time.addEvent({
       delay: 1000,
       callback() {
-        this.scene.scene.start('SceneLeaderBoard');
+        this.scene.scene.start('SceneGameOver');
       },
       callbackScope: this,
       loop: false,

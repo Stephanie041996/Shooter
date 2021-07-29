@@ -7,7 +7,7 @@
 /* eslint-disable import/extensions */
 import { Player, PlayerLaser } from './Player';
 
-import GunShip from './EnemyShips';
+import { ChaserShip, GunShip, CarrierShip, EnemyLaser}  from './EnemyShips';
 
 import sprBg0 from './content/sprBg0.png';
 import sprBg1 from './content/sprBg1.png';
@@ -224,3 +224,4 @@ export default class SceneMain extends Phaser.Scene {
     }
   }
 }
+

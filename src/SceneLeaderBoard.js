@@ -25,22 +25,22 @@ export default class SceneLeaderBoard extends Phaser.Scene {
     this.btnRestart.setInteractive();
 
     this.btnRestart.on('pointerover', function () {
-      this.btnRestart.setTexture('sprBtnRestartHover'); // set the button texture to sprBtnPlayHover
+      this.btnRestart.setTexture('sprBtnPlayHover'); // set the button texture to sprBtnPlayHover
       this.sfx.btnOver.play(); // play the button over sound
     }, this);
 
     this.btnRestart.on('pointerout', function () {
-      this.setTexture('sprBtnRestart');
+      this.setTexture('sprBtnPlay');
     });
 
     this.btnRestart.on('pointerdown', function () {
-      this.btnRestart.setTexture('sprBtnRestartDown');
+      this.btnRestart.setTexture('sprBtnPlayDown');
       this.sfx.btnDown.play();
     }, this);
 
     this.btnRestart.on('pointerup', function () {
-      this.btnRestart.setTexture('sprBtnRestart');
-      this.scene.start('SceneGameOver');
+      this.btnRestart.setTexture('sprBtnPlay');
+      this.scene.start('SceneMain');
     }, this);
 
     getScore().then((scores) => {
