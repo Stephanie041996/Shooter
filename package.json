@@ -2,19 +2,12 @@
   "name": "Shooter_Game",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "webpack.config.js",
   "scripts": {
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix --ext .js,.jsx .",
-    "test": "jest"
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.[t|j]sx?$": "babel-jest"
-    }
+    "start": "webpack serve --mode development --open",
+    "lint:fix": "eslint --fix --ext .js,.jsx ."
   },
   "keywords": [],
   "author": "",
@@ -23,12 +16,11 @@
     "css-loader": "^6.2.0",
     "file-loader": "^6.2.0",
     "style-loader": "^3.2.1",
-    "webpack": "^5.45.1",
-    "webpack-cli": "^4.7.2"
+    "webpack": "^5.47.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "node-fetch": "^2.6.1",
-    "phaser": "^3.55.2",
-    "phaser-webpack-loader": "^2.0.0"
+    "node-fetch": "^2.6.1"
   }
 }
