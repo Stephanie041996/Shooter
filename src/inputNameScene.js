@@ -1,5 +1,5 @@
 /* eslint-disable import/extensions */
-// import Phaser from 'phaser';
+import Phaser from 'phaser';
 import {
   setScore,
 } from './score';
