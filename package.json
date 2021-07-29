@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "node-fetch": "^2.6.1",
+    "phaser": "^3.55.2",
     "phaser-webpack-loader": "^2.0.0"
   }
 }
