@@ -35,7 +35,7 @@ export default class InputNameScene extends Phaser.Scene {
   
       this.returnKey.on('down', () => {
         const name = this.nameInput.getChildByName('name').value;
-        setScore(name, score);
+        setScore(name.value, score);
         this.scene.start('SceneGameOver');
       });
     }
