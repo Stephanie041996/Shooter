@@ -8,7 +8,7 @@
 import { Player, PlayerLaser } from './Player';
 
 import { GunShip, EnemyLaser } from './EnemyShips';
-
+import getScore from './getScore';
 import sprBg0 from './content/sprBg0.png';
 import sprBg1 from './content/sprBg1.png';
 import sprExplosion from './content/sprExplosion.png';
@@ -22,10 +22,11 @@ import sndExplode0 from './content/sndExplode0.wav';
 import sndExplode1 from './content/sndExplode1.wav';
 import sndLaser from './content/sndLaser.wav';
 
-let score = 0;
+ let score = 0;
 export default class SceneMain extends Phaser.Scene {
   constructor() {
     super({ key: 'SceneMain' });
+    
   }
 
   preload() {
@@ -107,7 +108,8 @@ export default class SceneMain extends Phaser.Scene {
     this.enemies = this.add.group();
     this.enemyLasers = this.add.group();
     this.playerLasers = this.add.group();
-
+    this.key = 'test'
+    score = getScore(this.key);
     const scoreBoard = this.add.text(10, 10, 'Shooter', `Score: ${score}`, 14).setTint(0x08B0F8);
 
     this.time.addEvent({
@@ -134,7 +136,7 @@ export default class SceneMain extends Phaser.Scene {
         playerLaser.destroy();
 
         score += 10;
-
+         window.localStorage.setItem('score', JSON.stringify(score));
         scoreBoard.text = `Score: ${score}`;
       }
     });

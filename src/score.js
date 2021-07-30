@@ -2,7 +2,7 @@
 /* eslint-disable no-empty */
 const fetch = require('node-fetch');
 
-const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/FjlaeYi14T6wTlmel7ig/scores/';
+const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/Zl4d7IVkemOTTVg2fUdz/scores/';
 
 export const setScore = async (playerName = '', gameScore = 0) => {
   const info = {
