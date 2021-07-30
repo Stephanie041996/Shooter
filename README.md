@@ -35,7 +35,7 @@
     <br />
     <a href="https://github.com/Stephanie041996/Shooter"><strong>Explore the docs</strong></a>
     <br />
-    <a href="https://github.com/Stephanie041996/Shooter">Live Version</a>
+    <a href="https://romantic-northcutt-6ed7e5.netlify.app">Live Version</a>
     <br />
     
   </p>
@@ -113,7 +113,7 @@ This is a Space Shooter Game application where the user controls a flying vehicl
 
 ## Live Version
 
-[GitHub Pages]()
+[GitHub Pages](https://romantic-northcutt-6ed7e5.netlify.app)
 
 <hr/>
 
