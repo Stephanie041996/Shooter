@@ -1,6 +1,7 @@
 /* eslint-disable func-names */
 /* eslint-disable import/extensions */
 /* eslint-disable no-undef */
+import Phaser from 'phaser';
 import Button from './Objects/Button';
 import {
   getScore,
