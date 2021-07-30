@@ -61,35 +61,7 @@ export default class SceneMainMenu extends Phaser.Scene {
       this.btnPlay.setTexture('sprBtnPlay');
       this.scene.start('SceneMain');
     }, this);
-    // LeaderBoard Button
-    this.sfx = {
-      btnOver: this.sound.add('sndBtnOver'),
-      btnDown: this.sound.add('sndBtnDown'),
-    };
-    this.btnlbPlay = this.add.sprite(
-      this.game.config.width * 0.5,
-      this.game.config.height * 0.5,
-      'LBbutton',
-    );
-    this.btnlbPlay.setInteractive();
-    // eslint-disable-next-line func-names
-    this.btnlbPlay.on('pointerover', function () {
-      this.btnlbPlay.setTexture('LBbuttonHover'); // set the button texture to sprBtnPlayHover
-      this.sfx.btnlbOver.play(); // play the button over sound
-    }, this);
-
-    this.btnlbPlay.on('pointerout', function () {
-      this.setTexture('LBbutton');
-    });
-    this.btnlbPlay.on('pointerdown', function () {
-      this.btnlbPlay.setTexture('LBbuttonDown');
-      this.sfx.btnlbDown.play();
-    }, this);
-
-    this.btnlbPlay.on('pointerup', function () {
-      this.btnlbPlay.setTexture('LBbutton');
-      this.scene.start('SceneLeaderBoard');
-    }, this);
+ 
 
     this.title = this.add.text(this.game.config.width * 0.5, 128, 'GALAXY SHOOTER GAME', {
       fontFamily: 'monospace',

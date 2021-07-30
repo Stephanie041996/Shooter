@@ -10,10 +10,14 @@ import InputNameScene from './inputNameScene';
 import './style.css';
 
 const config = {
-  type: Phaser.WEBGL,
+  type: Phaser.AUTO,
+  parent: 'phaser-container',
   width: 800,
   height: 840,
   backgroundColor: 'black',
+  dom: {
+    createContainer: true,
+  },
   physics: {
     default: 'arcade',
     arcade: {
