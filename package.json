@@ -4,10 +4,12 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "build": "webpack",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open",
     "lint": "eslint .",
-    "start": "webpack serve --mode development --open",
-    "lint:fix": "eslint --fix --ext .js,.jsx ."
+    "lint:fix": "eslint --fix --ext .js,.jsx .",
+    "start:dev": "webpack-dev-server"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +24,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "babel-loader": "^8.2.2",
     "node-fetch": "^2.6.1",
     "phaser": "^3.55.2",
     "phaser-webpack-loader": "^2.0.0"
