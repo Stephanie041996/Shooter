@@ -45,8 +45,8 @@ export default class SceneMainMenu extends Phaser.Scene {
     this.btnPlay.setInteractive();
     // eslint-disable-next-line func-names
     this.btnPlay.on('pointerover', function () {
-      this.btnPlay.setTexture('sprBtnPlayHover'); 
-      this.sfx.btnOver.play(); 
+      this.btnPlay.setTexture('sprBtnPlayHover');
+      this.sfx.btnOver.play();
     }, this);
 
     this.btnPlay.on('pointerout', function () {
@@ -61,7 +61,6 @@ export default class SceneMainMenu extends Phaser.Scene {
       this.btnPlay.setTexture('sprBtnPlay');
       this.scene.start('SceneMain');
     }, this);
- 
 
     this.title = this.add.text(this.game.config.width * 0.5, 128, 'GALAXY SHOOTER GAME', {
       fontFamily: 'monospace',

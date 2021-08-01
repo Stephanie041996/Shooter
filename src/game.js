@@ -36,12 +36,12 @@ const config = {
 };
 
 export default class Game extends Phaser.Game {
-    constructor() {
-      super(config);
-      this.score = 0;
-      this.playerName = '';
-      this.scene.start('SceneMainMenu');
-    }
+  constructor() {
+    super(config);
+    this.score = 0;
+    this.playerName = '';
+    this.scene.start('SceneMainMenu');
   }
-  
-  window.game = new Game();
+}
+
+window.game = new Game();

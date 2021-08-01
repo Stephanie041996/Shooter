@@ -22,11 +22,10 @@ import sndExplode0 from './content/sndExplode0.wav';
 import sndExplode1 from './content/sndExplode1.wav';
 import sndLaser from './content/sndLaser.wav';
 
- let score = 0;
+const score = 0;
 export default class SceneMain extends Phaser.Scene {
   constructor() {
     super({ key: 'SceneMain' });
-    
   }
 
   preload() {
@@ -108,7 +107,7 @@ export default class SceneMain extends Phaser.Scene {
     this.enemies = this.add.group();
     this.enemyLasers = this.add.group();
     this.playerLasers = this.add.group();
-    this.key = 'test'
+    this.key = 'test';
     window.game.score = getScore(this.key);
     window.game.score = 0;
     const scoreBoard = this.add.text(10, 10, 'Shooter', `Score: ${window.game.score}`, 14).setTint(0x08B0F8);

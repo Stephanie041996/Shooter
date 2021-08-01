@@ -15,7 +15,6 @@ export default class SceneGameOver extends Phaser.Scene {
     });
     this.title.setOrigin(0.5);
 
-
     // LeaderBoard Button
     this.sfx = {
       btnOver: this.sound.add('sndBtnOver'),
