@@ -5,6 +5,7 @@ import {
   setScore,
 } from './score';
 
+
 export default class InputNameScene extends Phaser.Scene {
   constructor() {
     super({ key: 'InputNameScene' });
@@ -13,16 +14,13 @@ export default class InputNameScene extends Phaser.Scene {
     this.load.html('form', 'assets/form.html');
   }
   create() {
-     const score = window.localStorage.getItem('score');
+     const score = localStorage.getItem('score');
 
       
   this.nameInput = this.add.dom(400, 320).createFromCache('form');
-    
-     
-     
      this.cameras.main.setBackgroundColor('rgba(0, 200, 0, 0.5)');
       this.message = this.add
-        .text(400, 250, 'Input Your Name & Hit ENTER', {
+        .text(400, 250, 'Enter Your Name & Hit ENTER', {
           color: '#FFFFFF',
           fontSize: 30,
           fontStyle: 'bold',
@@ -34,9 +32,17 @@ export default class InputNameScene extends Phaser.Scene {
       );
   
       this.returnKey.on('down', () => {
-        const name = this.nameInput.getChildByName('name').value;
-        setScore(name.value, score);
-        this.scene.start('SceneGameOver');
+        const inputText = this.nameInput.getChildByName('name').value;
+
+        if (inputText !== '') {
+          setScore(inputText.value, score).then(() => {
+            this.scene.start('SceneGameOver');
+          }).catch(() => {
+
+          });
+        } 
+        // setScore(name.value, score);
+        // this.scene.start('SceneGameOver');
       });
     }
    

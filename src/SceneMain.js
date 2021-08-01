@@ -109,8 +109,9 @@ export default class SceneMain extends Phaser.Scene {
     this.enemyLasers = this.add.group();
     this.playerLasers = this.add.group();
     this.key = 'test'
-    score = getScore(this.key);
-    const scoreBoard = this.add.text(10, 10, 'Shooter', `Score: ${score}`, 14).setTint(0x08B0F8);
+    window.game.score = getScore(this.key);
+    window.game.score = 0;
+    const scoreBoard = this.add.text(10, 10, 'Shooter', `Score: ${window.game.score}`, 14).setTint(0x08B0F8);
 
     this.time.addEvent({
       delay: 1800,
@@ -135,9 +136,9 @@ export default class SceneMain extends Phaser.Scene {
         enemy.explode(true);
         playerLaser.destroy();
 
-        score += 10;
-         window.localStorage.setItem('score', JSON.stringify(score));
-        scoreBoard.text = `Score: ${score}`;
+        window.game.score += 10;
+        localStorage.setItem('score', JSON.stringify(window.game.score));
+        scoreBoard.text = `Score: ${window.game.score}`;
       }
     });
 

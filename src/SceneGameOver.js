@@ -29,8 +29,8 @@ export default class SceneGameOver extends Phaser.Scene {
     this.btnPlay.setInteractive();
     // eslint-disable-next-line func-names
     this.btnPlay.on('pointerover', function () {
-      this.btnPlay.setTexture('LBbuttonHover'); // set the button texture to sprBtnPlayHover
-      this.sfx.btnOver.play(); // play the button over sound
+      this.btnPlay.setTexture('LBbuttonHover');
+      this.sfx.btnOver.play();
     }, this);
 
     this.btnPlay.on('pointerout', function () {
