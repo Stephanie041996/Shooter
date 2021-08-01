@@ -143,6 +143,18 @@ This is a Space Shooter Game application where the user controls a flying vehicl
   to comply with the dependencies held in package.json
 <hr/>
 
+## Setup
+
+Clone the repository on your local machine
+Cd into the folder
+Run npm install
+Run npm run build
+On your browser, make sure you point to the right address (i.e: http://127.0.0.1:5500/dist/index.html)
+
+## Run tests
+
+Run npm test on the root directory to run all the tests.
+
 ## Built With
 
 This project was built using these technologies.
