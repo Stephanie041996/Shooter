@@ -1,18 +1,26 @@
-/* eslint-disable func-names */
-/* eslint-disable import/extensions */
-/* eslint-disable no-undef */
 import Phaser from 'phaser';
-import Button from './Objects/Button';
-import {
-  getScore,
-} from './score.js';
+import { fetchScores, gotScores, renderFinalscore } from './score.js';
+import { appAlert } from './utils.js';
 
 export default class SceneLeaderBoard extends Phaser.Scene {
   constructor() {
     super({ key: 'SceneLeaderBoard' });
   }
 
+  preload() {
+    fetchScores(gotScores, appAlert, this);
+  }
+
   create() {
+    const title = this.add.text(this.game.config.width * 0.5, 80, 'Leader Board', {
+      fontFamily: 'monospace',
+      fontSize: 32,
+      fontStyle: 'bold',
+      color: '#ffffff',
+      align: 'center',
+    });
+    title.setOrigin(0.5);
+    renderFinalscore();
     this.sfx = {
       btnOver: this.sound.add('sndBtnOver'),
       btnDown: this.sound.add('sndBtnDown'),
@@ -20,38 +28,28 @@ export default class SceneLeaderBoard extends Phaser.Scene {
     this.btnRestart = this.add.sprite(
       this.game.config.width * 0.5,
       this.game.config.height * 0.5,
-      'sprBtnRestart',
+      'Quitbtn',
     );
 
     this.btnRestart.setInteractive();
 
     this.btnRestart.on('pointerover', function () {
-      this.btnRestart.setTexture('sprBtnPlayHover');
+      this.btnRestart.setTexture('Quitbtnhover');
       this.sfx.btnOver.play();
     }, this);
 
     this.btnRestart.on('pointerout', function () {
-      this.setTexture('sprBtnPlay');
+      this.setTexture('Quitbtn');
     });
 
     this.btnRestart.on('pointerdown', function () {
-      this.btnRestart.setTexture('sprBtnPlayDown');
+      this.btnRestart.setTexture('Quitbtnhover');
       this.sfx.btnDown.play();
     }, this);
 
     this.btnRestart.on('pointerup', function () {
-      this.btnRestart.setTexture('sprBtnPlay');
-      this.scene.start('SceneMain');
+      this.btnRestart.setTexture('Quitbtn');
+      this.scene.start('SceneEndCredits');
     }, this);
-
-    getScore().then((scores) => {
-      scores.sort((a, b) => b.score - a.score);
-      this.add.text(100, 20, 'shooter', 'RANK  SCORE   NAME').setTint(0x08B0F8);
-      for (let i = 0; i < 5; i += 1) {
-        this.add.text(100, 90 * (i + 1), 'shooter', ` ${i + 1}     ${scores[i].score}   ${scores[i].user}`).setTint(0x08B0F8);
-      }
-    }).catch(() => {
-
-    });
   }
 }

@@ -1,57 +1,52 @@
-import {
-  getScore,
-  setScore,
-} from '../score.js';
+import { addPoints, saveScore, fetchScores } from '../score';
+import 'regenerator-runtime/runtime';
 
-jest.mock('../score.js');
+class MokeGame {
+  constructor() {
+    this.points = 0;
+  }
+}
 
-describe('Testing the API functionality', () => {
-  it('returns the third user name', async () => {
-    getScore.mockResolvedValue({
-      result: [{
-        user: 'Tim Smith',
-        score: 22,
-      },
-      {
-        user: 'Rick James',
-        score: 75,
-      },
-      {
-        user: 'Gary man',
-        score: 50,
-      },
-      ],
-    });
-    const user = await getScore();
-    expect(user.result[2].user).toMatch('Gary man');
+function errorCallBack(title, text) {
+  // eslint-disable-next-line no-console
+  console.log(title, text);
+}
+
+describe('the game public functions', () => {
+  const game = new MokeGame();
+  // test('game points', () => {
+  //   game.points = addPoints(game, 200);
+  //   expect(game.points).toBe(200);
+  // });
+
+  test('saving user\'s score asynchronously', done => {
+    function saveScoreCallback(data) {
+      try {
+        const pos = data.result.indexOf('Leaderboard');
+        expect(pos).toBe(0);
+        done();
+      } catch (error) {
+        done(error);
+      }
+    }
+
+    saveScore(saveScoreCallback, errorCallBack, 'George', 20000);
   });
 
-  it('returns the score of the second user', async () => {
-    getScore.mockResolvedValue({
-      result: [{
-        user: 'Tim Smith',
-        score: 42,
-      },
-      {
-        user: 'Rick James',
-        score: 35,
-      },
-      {
-        user: 'Gary man',
-        score: 50,
-      },
-      ],
-    });
+  test('retrieving users\' scores asynchronously', done => {
+    function findGeorge(scoreData) {
+      return scoreData.user === 'George';
+    }
+    function fetchScoresCallback(data) {
+      try {
+        const george = data.result.find(findGeorge);
+        expect(george.user).toEqual('George');
+        done();
+      } catch (error) {
+        done(error);
+      }
+    }
 
-    const user = await getScore();
-    expect(user.result[1].score).toEqual(35);
-  });
-
-  it('Should save the score into the API', async () => {
-    setScore.mockResolvedValue({
-      result: 'Leaderboard score created correctly.',
-    });
-    const success = await setScore('Tim', 50000);
-    expect(success.result).toMatch('Leaderboard score created correctly.');
+    fetchScores(fetchScoresCallback, errorCallBack, 'scene');
   });
 });

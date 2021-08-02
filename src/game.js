@@ -5,8 +5,7 @@ import SceneMain from './SceneMain';
 import SceneMainMenu from './SceneMainMenu';
 import SceneGameOver from './SceneGameOver';
 import SceneLeaderBoard from './SceneLeaderBoard';
-import InputNameScene from './inputNameScene';
-
+import SceneEndCredits from './SceneEndCredits';
 import './style.css';
 
 const config = {
@@ -29,7 +28,8 @@ const config = {
     SceneMain,
     SceneGameOver,
     SceneLeaderBoard,
-    InputNameScene,
+    SceneEndCredits,
+
   ],
   pixelArt: true,
   roundPixels: true,
@@ -38,7 +38,7 @@ const config = {
 export default class Game extends Phaser.Game {
   constructor() {
     super(config);
-    this.score = 0;
+    this.points = 0;
     this.playerName = '';
     this.scene.start('SceneMainMenu');
   }

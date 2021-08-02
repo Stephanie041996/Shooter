@@ -4,6 +4,7 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
+    "test": "jest",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development --open",
@@ -28,9 +29,13 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.14.9",
     "babel-loader": "^8.2.2",
+    "jest": "^27.0.6",
+    "jest-webpack": "^0.5.1",
     "node-fetch": "^2.6.1",
     "phaser": "^3.55.2",
-    "phaser-webpack-loader": "^2.0.0"
+    "phaser-webpack-loader": "^2.0.0",
+    "regenerator-runtime": "^0.13.9"
   }
 }

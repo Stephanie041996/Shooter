@@ -11,6 +11,8 @@ import sndBtnDown from './content/sndBtnDown.wav';
 import LBbutton from './content/LBbutton.png';
 import LBbuttonHover from './content/LBbuttonhover.png';
 import LBbuttonDown from './content/LBbuttonDown.png';
+import Quitbtn from './content/Quitbtn.png';
+import Quitbtnhover from './content/Quitbtnhover.png';
 
 export default class SceneMainMenu extends Phaser.Scene {
   constructor() {
@@ -21,6 +23,8 @@ export default class SceneMainMenu extends Phaser.Scene {
     this.load.image('sprBtnPlay', sprBtnPlay);
     this.load.image('sprBtnPlayHover', sprBtnPlayHover);
     this.load.image('sprBtnPlayDown', sprBtnPlayDown);
+    this.load.image('Quitbtn', Quitbtn);
+    this.load.image('Quitbtnhover', Quitbtnhover);
     this.load.image('sprBtnRestart', sprBtnRestart);
     this.load.image('sprBtnRestartHover', sprBtnRestartHover);
     this.load.image('sprBtnRestartDown', sprBtnRestartDown);

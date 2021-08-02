@@ -1,11 +1,15 @@
 /* eslint-disable func-names */
 // eslint-disable-next-line no-undef
+import 'phaser';
+import { checkScore, renderPoints, renderScore } from './score.js';
+
 export default class SceneGameOver extends Phaser.Scene {
   constructor() {
     super({ key: 'SceneGameOver' });
   }
 
   create() {
+    checkScore();
     this.title = this.add.text(this.game.config.width * 0.5, 128, 'GAME OVER', {
       fontFamily: 'monospace',
       fontSize: 48,
@@ -15,6 +19,7 @@ export default class SceneGameOver extends Phaser.Scene {
     });
     this.title.setOrigin(0.5);
 
+    this.title.setOrigin(0.5);
     // LeaderBoard Button
     this.sfx = {
       btnOver: this.sound.add('sndBtnOver'),
