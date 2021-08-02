@@ -54,11 +54,10 @@ button {
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
   white-space: nowrap;
-  width: 100%;
 }
 
 .finalscoresDiv {
-  position:absolute;
+  position: absolute;
   width: 480px;
   height: 40px;
   left: calc(50% - 240px);
@@ -79,32 +78,6 @@ button {
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
   white-space: nowrap;
-  width: 100%;
-}
-
-.powerDiv {
-  position: absolute;
-  width: 480px;
-  height: 40px;
-  left: calc(50% - 240px);
-  top: 710px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #037;
-}
-
-.powerDiv > label {
-  display: block;
-  width: 100%;
-  height: 20px;
-  font-size: 18px;
-  color: white;
-  font-family: 'Courier New', Courier, monospace;
-  text-align: center;
-  white-space: nowrap;
-  width: 100%;
 }
 
 .backView {
@@ -224,4 +197,3 @@ button {
 .confirmButtons > div {
   width: 50%;
 }
-
