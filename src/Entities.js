@@ -15,8 +15,8 @@ export default class Entity extends Phaser.GameObjects.Sprite {
       this.setTexture('sprExplosion');
       this.play('sprExplosion');
 
-      // eslint-disable-next-line max-len
-      this.scene.sfx.explosions[Phaser.Math.Between(0, this.scene.sfx.explosions.length - 1)].play();
+      this.scene.sfx.explosions[Phaser.Math.Between(0,
+        this.scene.sfx.explosions.length - 1)].play();
 
       if (this.shootTimer !== undefined) {
         if (this.shootTimer) {
@@ -27,8 +27,7 @@ export default class Entity extends Phaser.GameObjects.Sprite {
       this.setAngle(0);
       this.body.setVelocity(0, 0);
 
-      // eslint-disable-next-line func-names
-      this.on('animationcomplete', function () {
+      this.on('animationcomplete', () => {
         if (canDestroy) {
           this.destroy();
         } else {
