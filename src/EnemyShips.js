@@ -1,3 +1,4 @@
+import Phaser from 'phaser';
 import Entity from './Entities.js';
 import EnemyLaser from './EnemyLaser.js';
 

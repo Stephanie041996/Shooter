@@ -1,4 +1,4 @@
-import 'phaser';
+import Phaser from 'phaser';
 import SceneMain from './SceneMain.js';
 import SceneMainMenu from './SceneMainMenu.js';
 import SceneGameOver from './SceneGameOver.js';

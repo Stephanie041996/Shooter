@@ -53,8 +53,12 @@ This is a Space Shooter Game application where the user controls a flying vehicl
 <img src="src/content/main.png" alt="battle.png">
 <hr />
 
-### Game Over Scene  
-<img src="src/content/gameover.png" alt="gameover.png">
+### LeaderBoard Scene  
+<img src="src/content/board.png" alt="gameover.png">
+<hr />
+
+### Credits Scene  
+<img src="src/content/credits.png" alt="gameover.png">
 <hr />
 
 

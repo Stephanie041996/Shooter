@@ -74,7 +74,7 @@ export function renderFinalscore() {
 
   const finalscoreText = document.createElement('label');
   finalscoreText.id = 'finalscoreText';
-  finalscoreText.innerHTML = 'Your Final Score :'.concat(window.game.playerName, 'is ', window.game.points.toString());
+  finalscoreText.innerHTML = 'Your Final Score :'.concat(window.game.playerName, ' is ', window.game.points.toString());
 
   finalscoresDiv.appendChild(finalscoreText);
   document.body.appendChild(finalscoresDiv);

@@ -21,6 +21,7 @@ export default class SceneLeaderBoard extends Phaser.Scene {
     });
     title.setOrigin(0.5);
     renderFinalscore();
+
     this.sfx = {
       btnOver: this.sound.add('sndBtnOver'),
       btnDown: this.sound.add('sndBtnDown'),
