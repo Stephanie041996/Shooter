@@ -1,7 +1,6 @@
+import Phaser from 'phaser';
 import Player from './Player.js';
-
 import GunShip from './EnemyShips.js';
-
 import sprBg0 from './content/sprBg0.png';
 import sprBg1 from './content/sprBg1.png';
 import sprExplosion from './content/sprExplosion.png';
@@ -176,7 +175,7 @@ export default class SceneMain extends Phaser.Scene {
         this.player.setData('isShooting', false);
       }
     }
-    for (var i = 0; i < this.enemies.getChildren().length; i++) {
+    for (let i = 0; i < this.enemies.getChildren().length; i += 1) {
       const enemy = this.enemies.getChildren()[i];
 
       enemy.update();
@@ -194,8 +193,8 @@ export default class SceneMain extends Phaser.Scene {
       }
     }
 
-    for (var i = 0; i < this.enemyLasers.getChildren().length; i++) {
-      var laser = this.enemyLasers.getChildren()[i];
+    for (let i = 0; i < this.enemyLasers.getChildren().length; i += 1) {
+      const laser = this.enemyLasers.getChildren()[i];
       laser.update();
       if (laser.x < -laser.displayWidth
     || laser.x > this.game.config.width + laser.displayWidth
@@ -207,8 +206,8 @@ export default class SceneMain extends Phaser.Scene {
       }
     }
 
-    for (var i = 0; i < this.playerLasers.getChildren().length; i++) {
-      var laser = this.playerLasers.getChildren()[i];
+    for (let i = 0; i < this.playerLasers.getChildren().length; i += 1) {
+      const laser = this.playerLasers.getChildren()[i];
       laser.update();
       if (laser.x < -laser.displayWidth
     || laser.x > this.game.config.width + laser.displayWidth

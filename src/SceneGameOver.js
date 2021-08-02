@@ -1,4 +1,5 @@
-import 'phaser';
+import Phaser from 'phaser';
+
 import { checkScore, renderPoints, renderScore } from './score.js';
 
 export default class SceneGameOver extends Phaser.Scene {

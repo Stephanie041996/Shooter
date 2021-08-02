@@ -1,3 +1,4 @@
+import Phaser from 'phaser';
 import sprBtnPlay from './content/sprBtnPlay.png';
 import sprBtnPlayHover from './content/sprBtnPlayHover.png';
 import sprBtnPlayDown from './content/sprBtnPlayDown.png';
@@ -45,7 +46,7 @@ export default class SceneMainMenu extends Phaser.Scene {
       'sprBtnPlay',
     );
     this.btnPlay.setInteractive();
-    this.btnPlay.on('pointerover', () =>  {
+    this.btnPlay.on('pointerover', () => {
       this.btnPlay.setTexture('sprBtnPlayHover');
       this.sfx.btnOver.play();
     }, this);
