@@ -16,16 +16,11 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/Stephanie041996/Shooter">
-    <img src="src/resources/images/microverse.png" alt="Microverse Logo" width="80" height="80">
+    <img src="src/content/microverse.png" alt="Microverse Logo" width="80" height="80">
   </a>
   
   <h3 align="center">The Shooter Game Application</h3>
@@ -117,6 +112,9 @@ This is a Space Shooter Game application where the user controls a flying vehicl
 
 <hr/>
 
+## Game Design Document
+
+View Game Design Document [GDD](src/content/docs/GDD.md)
 ## System Requierments
 
   - JavaScript Enabled  
