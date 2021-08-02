@@ -1,5 +1,3 @@
-/* eslint-disable func-names */
-// eslint-disable-next-line no-undef
 import 'phaser';
 import { checkScore, renderPoints, renderScore } from './score.js';
 
@@ -31,21 +29,20 @@ export default class SceneGameOver extends Phaser.Scene {
       'LBbutton',
     );
     this.btnPlay.setInteractive();
-    // eslint-disable-next-line func-names
-    this.btnPlay.on('pointerover', function () {
+    this.btnPlay.on('pointerover', () => {
       this.btnPlay.setTexture('LBbuttonHover');
       this.sfx.btnOver.play();
     }, this);
 
-    this.btnPlay.on('pointerout', function () {
+    this.btnPlay.on('pointerout', () => {
       this.setTexture('LBbutton');
     });
-    this.btnPlay.on('pointerdown', function () {
+    this.btnPlay.on('pointerdown', () => {
       this.btnPlay.setTexture('LBbuttonDown');
       this.sfx.btnDown.play();
     }, this);
 
-    this.btnPlay.on('pointerup', function () {
+    this.btnPlay.on('pointerup', () => {
       this.btnPlay.setTexture('LBbutton');
       this.scene.start('SceneLeaderBoard');
     }, this);

@@ -1,15 +1,7 @@
-/* eslint-disable no-undef */
-/* eslint-disable import/extensions */
-/* eslint-disable max-classes-per-file */
-import Entity from './Entities';
+import Entity from './Entities.js';
+import EnemyLaser from './EnemyLaser.js';
 
-export class EnemyLaser extends Entity {
-  constructor(scene, x, y) {
-    super(scene, x, y, 'sprLaserEnemy0');
-    this.body.velocity.y = 200;
-  }
-}
-export class GunShip extends Entity {
+export default class GunShip extends Entity {
   constructor(scene, x, y) {
     super(scene, x, y, 'sprEnemy0', 'GunShip');
     this.play('sprEnemy0');
@@ -38,12 +30,5 @@ export class GunShip extends Entity {
         this.shootTimer.remove(false);
       }
     }
-  }
-}
-export class CarrierShip extends Entity {
-  constructor(scene, x, y) {
-    super(scene, x, y, 'sprEnemy2', 'CarrierShip');
-    this.body.velocity.y = Phaser.Math.Between(50, 100);
-    this.play('sprEnemy2');
   }
 }

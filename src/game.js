@@ -1,11 +1,9 @@
-/* eslint-disable no-undef */
-/* eslint-disable import/extensions */
 import 'phaser';
-import SceneMain from './SceneMain';
-import SceneMainMenu from './SceneMainMenu';
-import SceneGameOver from './SceneGameOver';
-import SceneLeaderBoard from './SceneLeaderBoard';
-import SceneEndCredits from './SceneEndCredits';
+import SceneMain from './SceneMain.js';
+import SceneMainMenu from './SceneMainMenu.js';
+import SceneGameOver from './SceneGameOver.js';
+import SceneLeaderBoard from './SceneLeaderBoard.js';
+import SceneEndCredits from './SceneEndCredits.js';
 import './style.css';
 
 const config = {

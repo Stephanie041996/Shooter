@@ -33,21 +33,21 @@ export default class SceneLeaderBoard extends Phaser.Scene {
 
     this.btnRestart.setInteractive();
 
-    this.btnRestart.on('pointerover', function () {
+    this.btnRestart.on('pointerover', () => {
       this.btnRestart.setTexture('Quitbtnhover');
       this.sfx.btnOver.play();
     }, this);
 
-    this.btnRestart.on('pointerout', function () {
+    this.btnRestart.on('pointerout', () => {
       this.setTexture('Quitbtn');
     });
 
-    this.btnRestart.on('pointerdown', function () {
+    this.btnRestart.on('pointerdown', () => {
       this.btnRestart.setTexture('Quitbtnhover');
       this.sfx.btnDown.play();
     }, this);
 
-    this.btnRestart.on('pointerup', function () {
+    this.btnRestart.on('pointerup', () => {
       this.btnRestart.setTexture('Quitbtn');
       this.scene.start('SceneEndCredits');
     }, this);

@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable max-len */
 export default class Entity extends Phaser.GameObjects.Sprite {
   constructor(scene, x, y, key, type) {
     super(scene, x, y, key);
@@ -15,6 +13,7 @@ export default class Entity extends Phaser.GameObjects.Sprite {
       this.setTexture('sprExplosion');
       this.play('sprExplosion');
 
+      // eslint-disable-next-line max-len
       this.scene.sfx.explosions[Phaser.Math.Between(0, this.scene.sfx.explosions.length - 1)].play();
 
       if (this.shootTimer !== undefined) {

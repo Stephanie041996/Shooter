@@ -1,10 +1,7 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-use-before-define */
-/* eslint-disable import/extensions */
-/* eslint-disable max-classes-per-file */
-import Entity from './Entities';
+import Entity from './Entities.js';
+import PlayerLaser from './PlayerLaser.js';
 
-export class Player extends Entity {
+export default class Player extends Entity {
   constructor(scene, x, y, key) {
     super(scene, x, y, key, 'Player');
     this.setData('speed', 200);
@@ -57,12 +54,5 @@ export class Player extends Entity {
         this.setData('timerShootTick', 0);
       }
     }
-  }
-}
-
-export class PlayerLaser extends Entity {
-  constructor(scene, x, y) {
-    super(scene, x, y, 'sprLaserPlayer');
-    this.body.velocity.y = -200;
   }
 }
