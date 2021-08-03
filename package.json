@@ -2,19 +2,40 @@
   "name": "Shooter_Game",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "test": "jest",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix --ext .js,.jsx .",
+    "start:dev": "webpack-dev-server"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "webpack": "^5.45.1",
-    "webpack-cli": "^4.7.2"
+    "babel-eslint": "^10.1.0",
+    "css-loader": "^6.2.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "file-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.47.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "phaser": "^3.55.2"
+    "@babel/preset-env": "^7.14.9",
+    "babel-loader": "^8.2.2",
+    "jest": "^27.0.6",
+    "jest-webpack": "^0.5.1",
+    "node-fetch": "^2.6.1",
+    "phaser": "^3.55.2",
+    "phaser-webpack-loader": "^2.0.0",
+    "regenerator-runtime": "^0.13.9"
   }
 }
